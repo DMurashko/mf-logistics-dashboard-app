@@ -1,8 +1,8 @@
-import './App.css'
 import {Warehouses} from "./features/warehouses/Warehouses.tsx";
 import {Goods} from "./features/goods/Goods.tsx";
+import type {FC} from "react";
 
-function Dashboard() {
+export const Dashboard: FC = () => {
 
   return (
     <div>
@@ -11,5 +11,3 @@ function Dashboard() {
     </div>
   )
 }
-
-export default Dashboard

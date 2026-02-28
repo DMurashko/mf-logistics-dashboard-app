@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 |[**updateWarehouse**](#updatewarehouse) | **PATCH** /warehouses/{id} | Update a specific warehouse by id|
 
 # **createWarehouse**
-> createWarehouse(createWarehouseDto)
+> WarehouseResponseDto createWarehouse(createWarehouseDto)
 
 
 ### Example
@@ -42,7 +42,7 @@ const { status, data } = await apiInstance.createWarehouse(
 
 ### Return type
 
-void (empty response body)
+**WarehouseResponseDto**
 
 ### Authorization
 
@@ -51,7 +51,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -63,7 +63,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **findAllWarehouses**
-> findAllWarehouses()
+> PaginatedWarehouseResponseDto findAllWarehouses()
 
 
 ### Example
@@ -99,7 +99,7 @@ const { status, data } = await apiInstance.findAllWarehouses(
 
 ### Return type
 
-void (empty response body)
+**PaginatedWarehouseResponseDto**
 
 ### Authorization
 
@@ -108,7 +108,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -119,7 +119,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **findOneWarehouse**
-> findOneWarehouse()
+> WarehouseResponseDto findOneWarehouse()
 
 
 ### Example
@@ -149,7 +149,7 @@ const { status, data } = await apiInstance.findOneWarehouse(
 
 ### Return type
 
-void (empty response body)
+**WarehouseResponseDto**
 
 ### Authorization
 
@@ -158,7 +158,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -221,7 +221,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateWarehouse**
-> updateWarehouse(updateWarehouseDto)
+> WarehouseResponseDto updateWarehouse(updateWarehouseDto)
 
 
 ### Example
@@ -255,7 +255,7 @@ const { status, data } = await apiInstance.updateWarehouse(
 
 ### Return type
 
-void (empty response body)
+**WarehouseResponseDto**
 
 ### Authorization
 
@@ -264,7 +264,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details

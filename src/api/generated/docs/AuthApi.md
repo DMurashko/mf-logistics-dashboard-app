@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 |[**register**](#register) | **POST** /auth/register | Register a new user|
 
 # **login**
-> login(loginDto)
+> AuthResponseDto login(loginDto)
 
 
 ### Example
@@ -41,7 +41,7 @@ const { status, data } = await apiInstance.login(
 
 ### Return type
 
-void (empty response body)
+**AuthResponseDto**
 
 ### Authorization
 
@@ -50,7 +50,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -106,7 +106,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **refresh**
-> refresh(refreshTokenDto)
+> AuthResponseDto refresh(refreshTokenDto)
 
 
 ### Example
@@ -137,7 +137,7 @@ const { status, data } = await apiInstance.refresh(
 
 ### Return type
 
-void (empty response body)
+**AuthResponseDto**
 
 ### Authorization
 
@@ -146,7 +146,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -158,7 +158,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register**
-> register(registerDto)
+> AuthResponseDto register(registerDto)
 
 
 ### Example
@@ -189,7 +189,7 @@ const { status, data } = await apiInstance.register(
 
 ### Return type
 
-void (empty response body)
+**AuthResponseDto**
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details

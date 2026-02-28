@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 |[**updateProfile**](#updateprofile) | **PATCH** /users/me | Update current user profile|
 
 # **getProfile**
-> getProfile()
+> UserResponseDto getProfile()
 
 
 ### Example
@@ -31,7 +31,7 @@ This endpoint does not have any parameters.
 
 ### Return type
 
-void (empty response body)
+**UserResponseDto**
 
 ### Authorization
 
@@ -40,7 +40,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -52,7 +52,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateProfile**
-> updateProfile(updateUserDto)
+> UserResponseDto updateProfile(updateUserDto)
 
 
 ### Example
@@ -83,7 +83,7 @@ const { status, data } = await apiInstance.updateProfile(
 
 ### Return type
 
-void (empty response body)
+**UserResponseDto**
 
 ### Authorization
 
@@ -92,7 +92,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details

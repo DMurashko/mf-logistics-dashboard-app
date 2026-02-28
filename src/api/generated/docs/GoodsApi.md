@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost*
 |[**updateGood**](#updategood) | **PATCH** /warehouses/{warehouseId}/goods/{id} | Update a specific good by id|
 
 # **createGood**
-> createGood(createGoodDto)
+> GoodResponseDto createGood(createGoodDto)
 
 
 ### Example
@@ -45,7 +45,7 @@ const { status, data } = await apiInstance.createGood(
 
 ### Return type
 
-void (empty response body)
+**GoodResponseDto**
 
 ### Authorization
 
@@ -54,7 +54,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -66,7 +66,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **findAllGoods**
-> findAllGoods()
+> PaginatedGoodResponseDto findAllGoods()
 
 
 ### Example
@@ -105,7 +105,7 @@ const { status, data } = await apiInstance.findAllGoods(
 
 ### Return type
 
-void (empty response body)
+**PaginatedGoodResponseDto**
 
 ### Authorization
 
@@ -114,7 +114,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -125,7 +125,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **findOneGood**
-> findOneGood()
+> GoodResponseDto findOneGood()
 
 
 ### Example
@@ -158,7 +158,7 @@ const { status, data } = await apiInstance.findOneGood(
 
 ### Return type
 
-void (empty response body)
+**GoodResponseDto**
 
 ### Authorization
 
@@ -167,7 +167,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -233,7 +233,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateGood**
-> updateGood(updateGoodDto)
+> GoodResponseDto updateGood(updateGoodDto)
 
 
 ### Example
@@ -270,7 +270,7 @@ const { status, data } = await apiInstance.updateGood(
 
 ### Return type
 
-void (empty response body)
+**GoodResponseDto**
 
 ### Authorization
 
@@ -279,7 +279,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details

@@ -24,7 +24,11 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CreateWarehouseDto } from '../models';
 // @ts-ignore
+import type { PaginatedWarehouseResponseDto } from '../models';
+// @ts-ignore
 import type { UpdateWarehouseDto } from '../models';
+// @ts-ignore
+import type { WarehouseResponseDto } from '../models';
 /**
  * WarehousesApi - axios parameter creator
  */
@@ -57,6 +61,7 @@ export const WarehousesApiAxiosParamCreator = function (configuration?: Configur
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -106,6 +111,7 @@ export const WarehousesApiAxiosParamCreator = function (configuration?: Configur
                 localVarQueryParameter['search'] = search;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -143,6 +149,7 @@ export const WarehousesApiAxiosParamCreator = function (configuration?: Configur
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -221,6 +228,7 @@ export const WarehousesApiAxiosParamCreator = function (configuration?: Configur
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -248,7 +256,7 @@ export const WarehousesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createWarehouse(createWarehouseDto: CreateWarehouseDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async createWarehouse(createWarehouseDto: CreateWarehouseDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WarehouseResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createWarehouse(createWarehouseDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['WarehousesApi.createWarehouse']?.[localVarOperationServerIndex]?.url;
@@ -263,7 +271,7 @@ export const WarehousesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async findAllWarehouses(page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async findAllWarehouses(page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaginatedWarehouseResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.findAllWarehouses(page, limit, search, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['WarehousesApi.findAllWarehouses']?.[localVarOperationServerIndex]?.url;
@@ -276,7 +284,7 @@ export const WarehousesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async findOneWarehouse(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async findOneWarehouse(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WarehouseResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.findOneWarehouse(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['WarehousesApi.findOneWarehouse']?.[localVarOperationServerIndex]?.url;
@@ -303,7 +311,7 @@ export const WarehousesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateWarehouse(id: string, updateWarehouseDto: UpdateWarehouseDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async updateWarehouse(id: string, updateWarehouseDto: UpdateWarehouseDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WarehouseResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateWarehouse(id, updateWarehouseDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['WarehousesApi.updateWarehouse']?.[localVarOperationServerIndex]?.url;
@@ -325,7 +333,7 @@ export const WarehousesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createWarehouse(createWarehouseDto: CreateWarehouseDto, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        createWarehouse(createWarehouseDto: CreateWarehouseDto, options?: RawAxiosRequestConfig): AxiosPromise<WarehouseResponseDto> {
             return localVarFp.createWarehouse(createWarehouseDto, options).then((request) => request(axios, basePath));
         },
         /**
@@ -337,7 +345,7 @@ export const WarehousesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        findAllWarehouses(page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        findAllWarehouses(page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): AxiosPromise<PaginatedWarehouseResponseDto> {
             return localVarFp.findAllWarehouses(page, limit, search, options).then((request) => request(axios, basePath));
         },
         /**
@@ -347,7 +355,7 @@ export const WarehousesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        findOneWarehouse(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        findOneWarehouse(id: string, options?: RawAxiosRequestConfig): AxiosPromise<WarehouseResponseDto> {
             return localVarFp.findOneWarehouse(id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -368,7 +376,7 @@ export const WarehousesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateWarehouse(id: string, updateWarehouseDto: UpdateWarehouseDto, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        updateWarehouse(id: string, updateWarehouseDto: UpdateWarehouseDto, options?: RawAxiosRequestConfig): AxiosPromise<WarehouseResponseDto> {
             return localVarFp.updateWarehouse(id, updateWarehouseDto, options).then((request) => request(axios, basePath));
         },
     };

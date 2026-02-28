@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CreateGoodDto } from '../models';
 // @ts-ignore
+import type { GoodResponseDto } from '../models';
+// @ts-ignore
+import type { PaginatedGoodResponseDto } from '../models';
+// @ts-ignore
 import type { UpdateGoodDto } from '../models';
 /**
  * GoodsApi - axios parameter creator
@@ -61,6 +65,7 @@ export const GoodsApiAxiosParamCreator = function (configuration?: Configuration
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -114,6 +119,7 @@ export const GoodsApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['search'] = search;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -155,6 +161,7 @@ export const GoodsApiAxiosParamCreator = function (configuration?: Configuration
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -241,6 +248,7 @@ export const GoodsApiAxiosParamCreator = function (configuration?: Configuration
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -269,7 +277,7 @@ export const GoodsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createGood(warehouseId: string, createGoodDto: CreateGoodDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async createGood(warehouseId: string, createGoodDto: CreateGoodDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GoodResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createGood(warehouseId, createGoodDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GoodsApi.createGood']?.[localVarOperationServerIndex]?.url;
@@ -285,7 +293,7 @@ export const GoodsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async findAllGoods(warehouseId: string, page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async findAllGoods(warehouseId: string, page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaginatedGoodResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.findAllGoods(warehouseId, page, limit, search, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GoodsApi.findAllGoods']?.[localVarOperationServerIndex]?.url;
@@ -299,7 +307,7 @@ export const GoodsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async findOneGood(warehouseId: string, id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async findOneGood(warehouseId: string, id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GoodResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.findOneGood(warehouseId, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GoodsApi.findOneGood']?.[localVarOperationServerIndex]?.url;
@@ -328,7 +336,7 @@ export const GoodsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateGood(warehouseId: string, id: string, updateGoodDto: UpdateGoodDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async updateGood(warehouseId: string, id: string, updateGoodDto: UpdateGoodDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GoodResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateGood(warehouseId, id, updateGoodDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GoodsApi.updateGood']?.[localVarOperationServerIndex]?.url;
@@ -351,7 +359,7 @@ export const GoodsApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createGood(warehouseId: string, createGoodDto: CreateGoodDto, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        createGood(warehouseId: string, createGoodDto: CreateGoodDto, options?: RawAxiosRequestConfig): AxiosPromise<GoodResponseDto> {
             return localVarFp.createGood(warehouseId, createGoodDto, options).then((request) => request(axios, basePath));
         },
         /**
@@ -364,7 +372,7 @@ export const GoodsApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        findAllGoods(warehouseId: string, page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        findAllGoods(warehouseId: string, page?: number, limit?: number, search?: string, options?: RawAxiosRequestConfig): AxiosPromise<PaginatedGoodResponseDto> {
             return localVarFp.findAllGoods(warehouseId, page, limit, search, options).then((request) => request(axios, basePath));
         },
         /**
@@ -375,7 +383,7 @@ export const GoodsApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        findOneGood(warehouseId: string, id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        findOneGood(warehouseId: string, id: string, options?: RawAxiosRequestConfig): AxiosPromise<GoodResponseDto> {
             return localVarFp.findOneGood(warehouseId, id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -398,7 +406,7 @@ export const GoodsApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateGood(warehouseId: string, id: string, updateGoodDto: UpdateGoodDto, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+        updateGood(warehouseId: string, id: string, updateGoodDto: UpdateGoodDto, options?: RawAxiosRequestConfig): AxiosPromise<GoodResponseDto> {
             return localVarFp.updateGood(warehouseId, id, updateGoodDto, options).then((request) => request(axios, basePath));
         },
     };

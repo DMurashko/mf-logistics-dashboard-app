@@ -7,7 +7,7 @@ All URIs are relative to *http://localhost*
 |[**check**](#check) | **GET** /health | Health check endpoint|
 
 # **check**
-> check()
+> HealthResponseDto check()
 
 
 ### Example
@@ -30,7 +30,7 @@ This endpoint does not have any parameters.
 
 ### Return type
 
-void (empty response body)
+**HealthResponseDto**
 
 ### Authorization
 
@@ -39,7 +39,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details

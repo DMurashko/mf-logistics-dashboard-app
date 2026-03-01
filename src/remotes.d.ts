@@ -33,3 +33,54 @@ declare module 'ui_library/Theme' {
   export const ThemeProvider: React.FC<ThemeProviderProps>;
   export const theme: Theme;
 }
+
+declare module 'ui_library/DataGrid' {
+  export {
+    DataGrid,
+    type DataGridProps,
+    type GridColDef,
+    type GridRowParams,
+    type GridPaginationModel,
+    type GridRowSelectionModel,
+    type GridRenderCellParams,
+    type GridSlots,
+  } from '@mui/x-data-grid';
+}
+
+declare module 'login_app/auth' {
+  export const useAuth: () => { isAuthenticated: boolean };
+  export class AuthService {
+    static get isAuthenticated(): boolean;
+    static getAccessToken(): string | null;
+    static getRefreshToken(): string | null;
+    static setTokens(accessToken: string, refreshToken: string): void;
+    static clearTokens(): void;
+  }
+  export enum StorageKey {
+    ACCESS_TOKEN = 'accessToken',
+    REFRESH_TOKEN = 'refreshToken',
+  }
+}
+
+declare module 'login_app/api' {
+  import type { AxiosInstance } from 'axios';
+
+  export const apiAxiosInstance: AxiosInstance;
+
+  export interface IRefreshService {
+    interceptReq(): void;
+    interceptRes(): void;
+  }
+
+  export class RefreshTokenService implements IRefreshService {
+    static initialize(axiosInstance: AxiosInstance): RefreshTokenService;
+    static getInstance(): RefreshTokenService | null;
+    interceptReq(): void;
+    interceptRes(): void;
+    destroy(): void;
+  }
+
+  export class InvalidRefreshTokenError extends Error {
+    constructor(message?: string);
+  }
+}

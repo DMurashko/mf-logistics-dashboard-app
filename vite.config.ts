@@ -20,6 +20,13 @@ export default defineConfig({
           entryGlobalName: 'ui_library',
           shareScope: 'default',
         },
+        login_app: {
+          type: 'module',
+          name: 'login_app',
+          entry: 'http://localhost:3001/remoteEntry.js',
+          entryGlobalName: 'login_app',
+          shareScope: 'default',
+        },
       },
       shared: {
         react: { singleton: true, requiredVersion: '^19.0.0' },
@@ -30,6 +37,8 @@ export default defineConfig({
         '@emotion/react': { singleton: true },
         '@emotion/styled': { singleton: true },
         '@tanstack/react-query': { singleton: true },
+        '@mui/x-data-grid': { singleton: true },
+        axios: { singleton: true },
       },
     }),
     react(),

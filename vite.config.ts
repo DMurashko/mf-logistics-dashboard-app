@@ -16,14 +16,18 @@ export default defineConfig({
         ui_library: {
           type: 'module',
           name: 'ui_library',
-          entry: 'http://localhost:3003/remoteEntry.js',
+          entry:
+            process.env.VITE_UI_LIBRARY_URL ||
+            'http://localhost:3003/remoteEntry.js',
           entryGlobalName: 'ui_library',
           shareScope: 'default',
         },
         login_app: {
           type: 'module',
           name: 'login_app',
-          entry: 'http://localhost:3001/remoteEntry.js',
+          entry:
+            process.env.VITE_LOGIN_APP_URL ||
+            'http://localhost:3001/remoteEntry.js',
           entryGlobalName: 'login_app',
           shareScope: 'default',
         },
